@@ -1,45 +1,28 @@
 import PropTypes from 'prop-types';
 import style from './FeedBackButtons.module.css';
 
-export const FeedBackOptions = ({
-  handleGood,
-  handleNeutral,
-  handleBad,
-}) => {
+export const FeedBackOptions = ({ name, handleClick }) => {
   // console.log("BTNprops",name);
   return (
     <div className={style.btnBox}>
-      
+      {name.map(item => (
         <button
           className={style.button}
-          key='good'
+          key={item}
+          name={item}
           type="button"
-          onClick={handleGood}
+          onClick={handleClick}
         >
-          good
+          {item}
         </button>
-        <button
-          className={style.button}
-          key='neutral'
-          type="button"
-          onClick={handleNeutral}
-        >neutral
-        </button>
-        <button
-          className={style.button}
-          key='bad'
-          type="button"
-          onClick={handleBad}
-        >
-          bad
-        </button>
-    
+      ))}
     </div>
   );
 };
 
 FeedBackOptions.propTypes = {
-  handleBad: PropTypes.func,
-  handleNeutral: PropTypes.func,
-  handleGood: PropTypes.func,
+  name: PropTypes.array,
+  neutralHandler: PropTypes.func,
+  badHandler: PropTypes.func,
+  goodHandler: PropTypes.func,
 };
