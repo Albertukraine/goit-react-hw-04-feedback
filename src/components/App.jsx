@@ -1,5 +1,5 @@
 import style from './App.module.css';
-import React, { Component } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import { FeedBackOptions } from 'components/FeedBackButtons/FeedBackButtons';
 import { Statistics } from 'components/StatisticSection/StatisticSection';

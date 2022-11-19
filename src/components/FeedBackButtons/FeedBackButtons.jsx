@@ -22,7 +22,5 @@ export const FeedBackOptions = ({ name, handleClick }) => {
 
 FeedBackOptions.propTypes = {
   name: PropTypes.array,
-  neutralHandler: PropTypes.func,
-  badHandler: PropTypes.func,
-  goodHandler: PropTypes.func,
+  handleClick: PropTypes.func,
 };
